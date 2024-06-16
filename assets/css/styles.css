@@ -1,0 +1,28 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#content {
+}
+
+/* Estilo do footer */
+#footer {
+  margin-top: auto;
+}
+
+
+/* Estilo do menu */
+#menu {
+  height: 64px;
+}
+
+.menu-conteiner {
+  background-color: #fff;
+  padding: 5px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
