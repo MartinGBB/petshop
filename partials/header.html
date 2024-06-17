@@ -1,14 +1,31 @@
 <nav class="navbar navbar-expand-sm navbar-light container">
-  <a class="navbar-brand" href="index.html">PetShop</a>
+  <a class="navbar-brand" href="index.html">
+    <img src="../assets/img/icon.svg" alt="Logo PetShop">
+    PetShop
+  </a>
 
   <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="products.html">Produtos</a></li>
-          <li class="nav-item"><a class="nav-link" href="services.html">Serviços</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">Sobre Nós</a></li>
-          <li class="nav-item"><a class="nav-link" href="support.html">Suporte</a></li>
-          <li class="nav-item"><a class="nav-link" href="cart.html">Carrinho de Compras</a></li>
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="products.html">Produtos</a></li>
+      <li class="nav-item"><a class="nav-link" href="services.html">Serviços</a></li>
       </ul>
+  </div>
+
+  <div class="btn-group d-flex align-items-center">
+    <button
+      onclick="window.location.href='pages/profile.html'"  
+      class="profile-button btn-hover"
+    >
+      <img class="rounded-circle" src="https://media.istockphoto.com/id/1386479313/pt/foto/happy-millennial-afro-american-business-woman-posing-isolated-on-white.jpg?s=1024x1024&w=is&k=20&c=8ZanqZPUGnq35YEyoEN9706LLYZYGf3JVu7BnsJ28hc=" alt="">    
+    </button>
+
+    <button
+      class="btn btn-hover"
+      onclick="window.location.href='pages/cart.html'" 
+      style="font-size: 1.4rem"
+    >
+      <i class="fas fa-cart-shopping fa-md" style="color: var(--color-primary)"></i>
+    </button>
   </div>
 </nav>

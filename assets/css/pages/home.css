@@ -1,0 +1,25 @@
+.main-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* .products-home {
+  max-height: 100px;
+} */
+
+.card-img-top {
+  object-fit: cover;
+  min-height: 200px;
+}
+
+.card-item a {
+  text-decoration: none;
+}
+
+.card-item {
+  transition: transform 0.3s ease;
+}
+
+.card-item:hover {
+  transform: translateY(-2px); /* Eleva o card um pouco quando o mouse passa por cima */
+}
