@@ -34,46 +34,26 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-	
-	function getlink(tag_id) {
+	function redirectPage() {
+		setupNavigation("redirect-page")
+	}
+
+	// navegação da aplicação
+  function setupNavigation(tag_id) {
 		document.querySelectorAll(tag_id).forEach(link => {
       link.addEventListener('click', function (event) {
         event.preventDefault();
         const targetPage = this.getAttribute('href');
-				console.log(targetPage)
-				if (tag_id === 'redirect-page') {
+
+				// Verifica se tem que carregar um componente ou carregar novo html
+				if (tag_id || tag_id === 'redirect-page') {
 					return history.go(`${BASE_URL}${targetPage}`)
-				} else if (tag_id === 'load=component') {
+					
+				} else if (tag_id === 'load-component') {
 					loadContent(`pages/${targetPage}`, "main-content", loadPartials);
 				}
       });
     })
-	}
-
-	function redirectPage() {
-		getlink("redirect-page")
-	}
-
-  function setupNavigation() {
-    document.querySelectorAll('a.nav-link').forEach(link => {
-      link.addEventListener('click', function (event) {
-        event.preventDefault();
-        const targetPage = this.getAttribute('href');
-				console.log(targetPage)
-
-				
-        loadContent(`pages/${targetPage}`, "main-content", loadPartials);
-      });
-    });
-
-    // Adiciona manipuladores de eventos para links de produtos
-    document.querySelectorAll('.product-link').forEach(link => {
-      link.addEventListener('click', function (event) {
-        event.preventDefault();
-        const productId = this.getAttribute('data-product-id');
-        loadProductPage(productId);
-      });
-    });
   }
 
   function loadPageContent() {
