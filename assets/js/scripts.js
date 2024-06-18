@@ -2,36 +2,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
   function loadContent(url, containerId, callback) {
-    fetch(url)
+    fetch(`https://martingbb.github.io/petshop/${url}`)
       .then(response => response.text())
       .then(data => {
         document.getElementById(containerId).innerHTML = data;
         if (callback) {
           callback();
         }
-      });
+      })
+      .catch(error => console.error(`Error loading content from ${url}`, error));
   }
 
   function loadPartials() {
-    fetch("/partials/header.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("header").innerHTML = data;
-        setupNavigation();
-      });
-
-    fetch("/partials/footer.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("footer").innerHTML = data;
-      });
-
-    fetch("/partials/menu.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("menu").innerHTML = data;
-        setupNavigation();
-      });
+    loadContent("partials/header.html", "header", setupNavigation);
+    loadContent("partials/footer.html", "footer");
+    loadContent("partials/menu.html", "menu", setupNavigation);
   }
 
   function setupLoginForm() {
@@ -50,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
       link.addEventListener('click', function (event) {
         event.preventDefault();
         const targetPage = this.getAttribute('data-redirect-to');
-        loadContent(`${targetPage}`, "content");
+        loadContent(`pages/${targetPage}.html`, "content");
       });
     });
 
@@ -66,19 +51,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function loadPageContent() {
     const bodyClass = document.body.classList[0];
-    console.log(bodyClass)
+    console.log(bodyClass);
     switch (bodyClass) {
       case 'products-page':
-        loadContent("/pages/products/product.html", "main-content", loadPartials);
+        loadContent("pages/products/product.html", "main-content", loadPartials);
         break;
       case 'services-page':
-        loadContent("/pages/services/services.html", "main-content", loadPartials);
+        loadContent("pages/services/services.html", "main-content", loadPartials);
         break;
       case 'register-page':
-        loadContent("/pages/register/register.html", "main-content", loadPartials);
+        loadContent("pages/register/register.html", "main-content", loadPartials);
         break;
       case 'profile-page':
-        loadContent("/pages/profile/profile.html", "main-content", loadPartials);
+        loadContent("pages/profile/profile.html", "main-content", loadPartials);
         break;
       default:
         loadContent("pages/home.html", "content", loadPartials);
