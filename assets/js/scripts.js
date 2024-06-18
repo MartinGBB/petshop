@@ -1,8 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
   const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
+	const hostName = window.location.hostname
+	const isLocalhost = hostName === "localhost" || hostName === "127.0.0.1";
+	const BASE_URL = isLocalhost ? "" : "https://martingbb.github.io/petshop/";
+
   function loadContent(url, containerId, callback) {
-    fetch(`https://martingbb.github.io/petshop/${url}`)
+    fetch(`${BASE_URL}/${url}`)
       .then(response => response.text())
       .then(data => {
         document.getElementById(containerId).innerHTML = data;
@@ -14,9 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function loadPartials() {
-    loadContent("partials/header.html", "header", setupNavigation);
+    loadContent("partials/header.html", "header", redirectPage);
     loadContent("partials/footer.html", "footer");
-    loadContent("partials/menu.html", "menu", setupNavigation);
+    loadContent("partials/menu.html", "menu", redirectPage);
   }
 
   function setupLoginForm() {
@@ -30,12 +34,35 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  function setupNavigation() {
-    document.querySelectorAll('.redirect').forEach(link => {
+	
+	function getlink(tag_id) {
+		document.querySelectorAll(tag_id).forEach(link => {
       link.addEventListener('click', function (event) {
         event.preventDefault();
-        const targetPage = this.getAttribute('data-redirect-to');
-        loadContent(`pages/${targetPage}.html`, "content");
+        const targetPage = this.getAttribute('href');
+				console.log(targetPage)
+				if (tag_id === 'redirect-page') {
+					return history.go(`${BASE_URL}${targetPage}`)
+				} else if (tag_id === 'load=component') {
+					loadContent(`pages/${targetPage}`, "main-content", loadPartials);
+				}
+      });
+    })
+	}
+
+	function redirectPage() {
+		getlink("redirect-page")
+	}
+
+  function setupNavigation() {
+    document.querySelectorAll('a.nav-link').forEach(link => {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        const targetPage = this.getAttribute('href');
+				console.log(targetPage)
+
+				
+        loadContent(`pages/${targetPage}`, "main-content", loadPartials);
       });
     });
 
