@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro</title>
+  <link rel="shortcut icon" type="imagex/svg" href="https://martingbb.github.io/petshop/assets/img/icon.svg">
+  <title>Cadastro | PetShop</title>
   <!-- Bootstrap CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +17,7 @@
 </head>
 <body>
   <div class="container mt-5 d-flex flex-column justify-content-center">
+  <button class="btn btn-secondary" onclick="back()" style="background-color: #b1b1b1ad; border: none; width: 40px; "><</button>
     <div class="text-center">
       <img src="../../assets/img/icon.svg" alt="">
       <h1><strong>Boas vindas!</strong></h1>
@@ -97,6 +99,10 @@
       event.preventDefault();
       alert('Cadastro realizado com sucesso!');
     });
+
+    function back() {
+        window.history.back()
+    }
   </script>
 </body>
 </html>
