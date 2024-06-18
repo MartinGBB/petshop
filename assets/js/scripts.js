@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  localStorage.setItem('isLoggedIn', true)
   const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
   function loadContent(url, containerId, callback) {
@@ -74,6 +73,12 @@ document.addEventListener("DOMContentLoaded", function () {
         break;
       case 'services-page':
         loadContent("/pages/services/services.html", "main-content", loadPartials);
+        break;
+      case 'register-page':
+        loadContent("/pages/register/register.html", "main-content", loadPartials);
+        break;
+      case 'profile-page':
+        loadContent("/pages/profile/profile.html", "main-content", loadPartials);
         break;
       default:
         loadContent("pages/home.html", "content", loadPartials);
