@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	const BASE_URL = "/petshop";
 
   function loadContent(url, containerId, callback) {
-    fetch(`${BASE_URL}/${url}`)
+    fetch(`${BASE_URL}/${url}/`)
       .then(response => response.text())
       .then(data => {
         document.getElementById(containerId).innerHTML = data;
@@ -34,10 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-	function redirectPage() {
-		setupNavigation("redirect-page")
-	}
-
 	// navegação da aplicação
   function setupNavigation(tag_id) {
 		document.querySelectorAll(tag_id).forEach(link => {
@@ -47,14 +43,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 				// Verifica se tem que carregar um componente ou carregar novo html
 				if (tag_id || tag_id === 'redirect-page') {
-					return history.go(`${BASE_URL}${targetPage}`)
-
+					return history.go(`${BASE_URL}/${targetPage}`)
+					
 				} else if (tag_id === 'load-component') {
 					loadContent(`pages/${targetPage}`, "main-content", loadPartials);
 				}
       });
     })
   }
+
+	function redirectPage() {
+		setupNavigation("redirect-page")
+	}
 
   function loadPageContent() {
     const bodyClass = document.body.classList[0];
