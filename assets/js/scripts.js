@@ -41,9 +41,9 @@ document.addEventListener("DOMContentLoaded", function () {
       link.addEventListener('click', function (event) {
         event.preventDefault();
         const targetPage = this.getAttribute('href') || this.getAttribute('data-redirect-to') || "";
-				console.log("oi", targetPage)
+
         if (tag_id === 'redirect-page') {
-					window.location.href = window.location.origin + BASE_URL + targetPage
+					window.location.href = window.location.origin + BASE_URL + targetPage + "/"
         } else if (tag_id === 'load-component') {
           loadContent(`pages/${targetPage}`, "main-content", loadPartials);
         }
@@ -81,6 +81,5 @@ document.addEventListener("DOMContentLoaded", function () {
     loadPageContent();
   } else {
     loadContent("pages/login.html", "content", setupLoginForm);
-    // loadContent("pages/register", "content", redirectPage);
   }
 });
