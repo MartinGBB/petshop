@@ -29,7 +29,7 @@
     <script>
       function logout() {
         localStorage.removeItem('isLoggedIn');
-        window.location.href = '/';
+        window.history.back()
       }
 
       function back() {
