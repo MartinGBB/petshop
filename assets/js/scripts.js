@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	const hostName = window.location.hostname
 	const isLocalhost = hostName === "localhost" || hostName === "127.0.0.1";
-	const BASE_URL = isLocalhost ? "" : "https://martingbb.github.io/petshop/";
+	const BASE_URL = "/petshop";
 
   function loadContent(url, containerId, callback) {
     fetch(`${BASE_URL}/${url}`)
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
 				// Verifica se tem que carregar um componente ou carregar novo html
 				if (tag_id || tag_id === 'redirect-page') {
 					return history.go(`${BASE_URL}${targetPage}`)
-					
+
 				} else if (tag_id === 'load-component') {
 					loadContent(`pages/${targetPage}`, "main-content", loadPartials);
 				}
