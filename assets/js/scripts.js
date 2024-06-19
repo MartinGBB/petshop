@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	const BASE_URL = "/petshop";
 
   function loadContent(url, containerId, callback) {
-    fetch(`${BASE_URL}/${url}/`)
+    fetch(`${BASE_URL}/${url}`)
       .then(response => response.text())
       .then(data => {
         document.getElementById(containerId).innerHTML = data;
