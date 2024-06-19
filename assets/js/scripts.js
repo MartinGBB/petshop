@@ -3,10 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	const hostName = window.location.hostname
 	const isLocalhost = hostName === "localhost" || hostName === "127.0.0.1";
-	const BASE_URL = "/petshop";
+	const BASE_URL = isLocalhost ? "/" : "/petshop/";
 
   function loadContent(url, containerId, callback) {
-    fetch(`${BASE_URL}/${url}`)
+    fetch(`${BASE_URL}${url}`)
       .then(response => response.text())
       .then(data => {
         document.getElementById(containerId).innerHTML = data;
@@ -29,21 +29,21 @@ document.addEventListener("DOMContentLoaded", function () {
       loginForm.addEventListener('submit', function (event) {
         event.preventDefault();
         localStorage.setItem('isLoggedIn', 'true');
-        loadContent("pages/home.html", "content", loadPartials);
+				window.location.reload()
       });
     }
   }
+
 
 	// navegação da aplicação
   function setupNavigation(tag_id) {
     document.querySelectorAll(`[data-role="${tag_id}"]`).forEach(link => {
       link.addEventListener('click', function (event) {
         event.preventDefault();
-        const targetPage = this.getAttribute('href');
-
+        const targetPage = this.getAttribute('href') || this.getAttribute('data-redirect-to') || "";
+				console.log("oi", targetPage)
         if (tag_id === 'redirect-page') {
-          history.pushState(null, '', `${BASE_URL}/${targetPage}`);
-          loadPageContent(); // Recarregar o conteúdo após mudança no histórico
+					window.location.href = window.location.origin + BASE_URL + targetPage
         } else if (tag_id === 'load-component') {
           loadContent(`pages/${targetPage}`, "main-content", loadPartials);
         }
@@ -81,5 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
     loadPageContent();
   } else {
     loadContent("pages/login.html", "content", setupLoginForm);
+    // loadContent("pages/register", "content", redirectPage);
   }
 });
