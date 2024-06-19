@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
-  const hostName = window.location.hostname;
-  const isLocalhost = hostName === "localhost" || hostName === "127.0.0.1";
-  const BASE_URL = "/petshop";
+	const hostName = window.location.hostname
+	const isLocalhost = hostName === "localhost" || hostName === "127.0.0.1";
+	const BASE_URL = "/petshop";
 
   function loadContent(url, containerId, callback) {
     fetch(`${BASE_URL}/${url}`)
@@ -29,12 +29,12 @@ document.addEventListener("DOMContentLoaded", function () {
       loginForm.addEventListener('submit', function (event) {
         event.preventDefault();
         localStorage.setItem('isLoggedIn', 'true');
-        loadContent("pages/home.html", "main-content", loadPartials);
+        loadContent("pages/home.html", "content", loadPartials);
       });
     }
   }
 
-  // navegação da aplicação
+	// navegação da aplicação
   function setupNavigation(tag_id) {
     document.querySelectorAll(`[data-role="${tag_id}"]`).forEach(link => {
       link.addEventListener('click', function (event) {
@@ -51,9 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  function redirectPage() {
-    setupNavigation("redirect-page");
-  }
+	function redirectPage() {
+		setupNavigation("redirect-page")
+	}
 
   function loadPageContent() {
     const bodyClass = document.body.classList[0];
@@ -82,6 +82,4 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     loadContent("pages/login.html", "content", setupLoginForm);
   }
-
-  setupNavigation("load-component");
 });
