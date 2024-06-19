@@ -18,6 +18,10 @@ html, body {
   box-sizing: border-box;
   overflow-x: hidden;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   font-family: "Karla", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
@@ -27,8 +31,6 @@ html, body {
   transform: scale(1.05);
 }
 
-#content {
-  /* height: 100%;
-  background-color: #49C000; */
+.container {
+  margin-bottom: 2rem;  
 }
-
