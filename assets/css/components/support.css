@@ -1,0 +1,22 @@
+.form-control:focus {
+  border-color: #49C000;
+  box-shadow: 0 0 0 0.25rem rgba(73, 192, 0, 0.25);
+}
+
+.btn-primary, .openModal {
+  background-color: #49C000;
+  border: none;
+  text-align: center;
+}
+
+.openModal {
+  height: 45px;
+  width: 45px;
+  border-radius: 100%;
+}
+
+.btn-primary:focus,
+.btn-primary:hover {
+  background-color: #3d9400;
+  border: none;
+}

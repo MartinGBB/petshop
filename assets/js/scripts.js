@@ -19,9 +19,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function loadPartials() {
     loadContent("partials/header.html", "header", redirectPage);
+    loadContent("partials/goSupport.html", "support");
     loadContent("partials/footer.html", "footer");
     loadContent("partials/menu.html", "menu", redirectPage);
   }
+	
 
   function setupLoginForm() {
     const loginForm = document.getElementById('login-form');
