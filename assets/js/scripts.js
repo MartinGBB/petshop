@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
-	const hostName = window.location.hostname
-	const isLocalhost = hostName === "localhost" || hostName === "127.0.0.1";
-	const BASE_URL = "/petshop";
+  const hostName = window.location.hostname;
+  const isLocalhost = hostName === "localhost" || hostName === "127.0.0.1";
+  const BASE_URL = "/petshop";
 
   function loadContent(url, containerId, callback) {
     fetch(`${BASE_URL}/${url}`)
@@ -29,32 +29,31 @@ document.addEventListener("DOMContentLoaded", function () {
       loginForm.addEventListener('submit', function (event) {
         event.preventDefault();
         localStorage.setItem('isLoggedIn', 'true');
-        loadContent("pages/home.html", "content", loadPartials);
+        loadContent("pages/home.html", "main-content", loadPartials);
       });
     }
   }
 
-	// navegação da aplicação
+  // navegação da aplicação
   function setupNavigation(tag_id) {
-		document.querySelectorAll(tag_id).forEach(link => {
+    document.querySelectorAll(`[data-role="${tag_id}"]`).forEach(link => {
       link.addEventListener('click', function (event) {
         event.preventDefault();
         const targetPage = this.getAttribute('href');
 
-				// Verifica se tem que carregar um componente ou carregar novo html
-				if (tag_id || tag_id === 'redirect-page') {
-					return history.go(`${BASE_URL}/${targetPage}`)
-					
-				} else if (tag_id === 'load-component') {
-					loadContent(`pages/${targetPage}`, "main-content", loadPartials);
-				}
+        if (tag_id === 'redirect-page') {
+          history.pushState(null, '', `${BASE_URL}/${targetPage}`);
+          loadPageContent(); // Recarregar o conteúdo após mudança no histórico
+        } else if (tag_id === 'load-component') {
+          loadContent(`pages/${targetPage}`, "main-content", loadPartials);
+        }
       });
-    })
+    });
   }
 
-	function redirectPage() {
-		setupNavigation("redirect-page")
-	}
+  function redirectPage() {
+    setupNavigation("redirect-page");
+  }
 
   function loadPageContent() {
     const bodyClass = document.body.classList[0];
@@ -83,4 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     loadContent("pages/login.html", "content", setupLoginForm);
   }
+
+  setupNavigation("load-component");
 });
