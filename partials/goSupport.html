@@ -1,0 +1,33 @@
+<!-- Botão de Suporte -->
+<button type="button" class="btn btn-primary openModal" data-bs-toggle="modal" data-bs-target="#modalSuporte">
+  <i class="fa-solid fa-phone text-light"></i>
+</button>
+
+<!-- Modal de Suporte -->
+<div class="modal fade" id="modalSuporte" tabindex="-1" aria-labelledby="modalSuporteLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="modalSuporteLabel">Precisa de Ajuda?</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+    </div>
+    <div class="modal-body">
+      <p>Estamos aqui para ajudar! Se você tiver alguma dúvida, preocupação ou precisar de assistência, por favor, envie-nos uma mensagem. Nossa equipe de suporte está pronta para responder rapidamente.</p>
+      <form>
+        <div class="mb-3">
+          <label for="titulo" class="form-label">Título:</label>
+          <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Digite o título do seu problema">
+        </div>
+        <div class="mb-3">
+          <label for="mensagem" class="form-label">Mensagem:</label>
+          <textarea class="form-control" id="mensagem" name="mensagem" rows="5" placeholder="Descreva sua mensagem ou dúvida"></textarea>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      <button type="button" class="btn btn-primary">Enviar Mensagem</button>
+    </div>
+  </div>
+</div>
+</div>
