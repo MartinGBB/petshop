@@ -1,0 +1,47 @@
+body {
+  font-family: "Karla", sans-serif;
+}
+.product-image {
+  width: 100%;
+  max-width: 400px;
+}
+.price {
+  font-size: 1.5rem;
+  color: #49C000;
+}
+.buy-button {
+  background-color: #49C000;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.buy-button:hover {
+  background-color: #3d9400;
+}
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #49C000;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.back-to-top:hover {
+  background-color: #3d9400;
+}
+.navbar-brand img {
+  width: 40px;
+  margin-right: 10px;
+}
+.profile-button img {
+  width: 40px;
+  height: 40px;
+}
+.profile-button, .btn-hover {
+  background: none;
+  border: none;
+}
