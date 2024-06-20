@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function loadPartials() {
     loadContent("partials/header.html", "header", redirectPage);
-    loadContent("partials/goSupport.html", "support");
+    loadContent("partials/support.html", "support");
     loadContent("partials/footer.html", "footer");
     loadContent("partials/menu.html", "menu", redirectPage);
   }
@@ -47,22 +47,36 @@ document.addEventListener("DOMContentLoaded", function () {
         if (tag_id === 'redirect-page') {
 					window.location.href = window.location.origin + BASE_URL + targetPage + "/"
         } else if (tag_id === 'load-component') {
-          loadContent(`pages/${targetPage}`, "main-content", loadPartials);
+					console.log(tag_id)
+          // loadContent(`pages/${targetPage}`, "main-content", loadPartials);
         }
       });
-    });
+    });	
   }
 
 	function redirectPage() {
 		setupNavigation("redirect-page")
 	}
 
+	// routeador do site
   function loadPageContent() {
     const bodyClass = document.body.classList[0];
     console.log(bodyClass);
     switch (bodyClass) {
       case 'products-page':
         loadContent("pages/products/product.html", "main-content", loadPartials);
+        break;
+      case 'brinqueido-mordedor-page':
+        loadContent("pages/products/product-detail/brinqueido-mordedor/product.html", "main-content", loadPartials);
+        break;
+      case 'armazenador_racao-page':
+        loadContent("pages/products/product-detail/armazenador_racao/product.html", "main-content", loadPartials);
+        break;
+      case 'shampoo-page':
+        loadContent("pages/products/product-detail/shampoo/product.html", "main-content", loadPartials);
+        break;
+      case 'sache-page':
+        loadContent("pages/products/product-detail/sache/product.html", "main-content", loadPartials);
         break;
       case 'services-page':
         loadContent("pages/services/services.html", "main-content", loadPartials);

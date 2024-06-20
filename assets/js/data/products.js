@@ -37,20 +37,20 @@ const products = [
     ]
   },
   {
-    name: "Sachê de Comida Úmida para Gatos",
-    image: "sache_gato.jpg",
+    name: "Sachê de Comida Úmida",
+    image: "sache.jpg",
     price: 2.90,
-    description: "Sachê de comida úmida para gatos, com sabores deliciosos e ingredientes de alta qualidade. Perfeito para uma alimentação balanceada e saborosa.",
+    description: "Sachê de comida úmida, com sabores deliciosos e ingredientes de alta qualidade. Perfeito para uma alimentação balanceada e saborosa.",
     caracteristicas: [
       "Rico em Nutrientes: Contém vitaminas e minerais essenciais.",
       "Variedade de Sabores: Disponível em frango, peixe e carne.",
       "Fácil de Servir: Prático e higiênico, ideal para uma refeição rápida.",
-      "Textura Macia: Agradável ao paladar dos gatos."
+      "Textura Macia: Agradável ao paladar."
     ]
   },
   {
     name: "Shampoo para Cães",
-    image: "shampoo_caes.jpg",
+    image: "shampoo.jpg",
     price: 24.90,
     description: "Shampoo suave para cães, formulado para limpar e hidratar a pele e pelagem do seu pet. Com fragrância agradável e ingredientes naturais.",
     caracteristicas: [
