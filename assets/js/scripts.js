@@ -66,8 +66,8 @@ document.addEventListener("DOMContentLoaded", function () {
       case 'products-page':
         loadContent("pages/products/product.html", "main-content", loadPartials);
         break;
-      case 'brinqueido-mordedor-page':
-        loadContent("pages/products/product-detail/brinqueido-mordedor/product.html", "main-content", loadPartials);
+      case 'brinquedo-mordedor-page':
+        loadContent("pages/products/product-detail/brinquedo-mordedor/product.html", "main-content", loadPartials);
         break;
       case 'armazenador_racao-page':
         loadContent("pages/products/product-detail/armazenador_racao/product.html", "main-content", loadPartials);
