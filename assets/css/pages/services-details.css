@@ -1,0 +1,44 @@
+.main-container {
+  padding: 20px;
+}
+.service-image {
+  max-width: 100%;
+  height: auto;
+}
+.price {
+  font-size: 1.5rem;
+  color: #28a745;
+}
+.schedule-container {
+  margin-top: 20px;
+}
+.schedule-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+}
+.time-slot-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  margin: 5px;
+}
+
+.time-slot-btn:focus {
+  background-color: #218838;
+}
+
+.time-slot-btn:hover {
+  background-color: #218838;
+}
+.delivery-option {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+.delivery-option button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  margin: 5px;
+}

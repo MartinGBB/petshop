@@ -6,6 +6,8 @@
 
 /* Páginas da aplicação */
 @import url('pages/home.css');
+@import url('pages/services-details.css');
+@import url('pages/products-datails.css');
 
 /* Configuração global */
 :root {

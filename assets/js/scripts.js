@@ -63,11 +63,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const bodyClass = document.body.classList[0];
     console.log(bodyClass);
     switch (bodyClass) {
+			// Products
       case 'products-page':
         loadContent("pages/products/product.html", "main-content", loadPartials);
         break;
-      case 'brinqueido-mordedor-page':
-        loadContent("pages/products/product-detail/brinqueido-mordedor/product.html", "main-content", loadPartials);
+      case 'brinquedo-mordedor-page':
+        loadContent("pages/products/product-detail/brinquedo-mordedor/product.html", "main-content", loadPartials);
         break;
       case 'armazenador_racao-page':
         loadContent("pages/products/product-detail/armazenador_racao/product.html", "main-content", loadPartials);
@@ -78,9 +79,20 @@ document.addEventListener("DOMContentLoaded", function () {
       case 'sache-page':
         loadContent("pages/products/product-detail/sache/product.html", "main-content", loadPartials);
         break;
+			// Services
       case 'services-page':
         loadContent("pages/services/services.html", "main-content", loadPartials);
         break;
+			case 'banho-page': 
+				loadContent("pages/services/services-details/banho/service.html", "main-content", loadPartials);
+				break;
+			case 'tosa-page': 
+				loadContent("pages/services/services-details/tosa/service.html", "main-content", loadPartials);
+			break;
+			case 'banho-tosa-page': 
+				loadContent("pages/services/services-details/banho-tosa/service.html", "main-content", loadPartials);
+			break;
+			// Outras telas
       case 'register-page':
         loadContent("pages/register/register.html", "main-content", loadPartials);
         break;
