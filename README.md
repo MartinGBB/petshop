@@ -1,6 +1,7 @@
 # PetShop
 
 Este projeto é um site de uma PetShop, onde os usuários podem acessar informações de compras de produtos e serviços para animais de estimação, fazer login, cadastrar usuários e pets, visualizar seus perfis e entrar em contato com suporte (os itens de cadastro são estaticos).
+Para este projeto desenvolví a interface no [figma](https://www.figma.com/design/Rt2uX5AOlg5sdgn9tVrTiF/PetShop?node-id=5-534&t=wioegJM8SK5SE2cQ-1). 
 
 ## Funcionalidades
 
