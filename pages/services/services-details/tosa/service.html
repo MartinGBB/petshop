@@ -1,56 +1,85 @@
 <div class="container main-container">
-  <button class="btn btn-secondary mb-3" onclick="window.history.back()" style="background-color: #b1b1b1ad; border: none;">&larr; Voltar</button>
-  <div class="text-center">
-      <img src="../../../../assets/img/services/tosa.png" alt="Tosa" class="service-image img-fluid">
-  </div>
-  <h1 class="mt-4 text-center">Tosa</h1>
-  <div class="d-flex justify-content-center align-items-center mt-2">
-      <span class="price me-3">R$ 60,00</span>
-  </div>
+	<button class="btn btn-secondary mb-3" onclick="window.history.back()" style="background-color: #b1b1b1ad; border: none;">&larr; Voltar</button>
+	<div class="text-center">
+			<img src="../../../../assets/img/services/tosa.png" alt="Tosa" class="service-image img-fluid">
+	</div>
+	<h1 class="mt-4 text-center">Tosa</h1>
+	<div class="d-flex justify-content-center align-items-center mt-2">
+			<span class="price me-3">R$ 60,00</span>
+	</div>
 
-  <div class="mt-4">
-      <h2>Descrição</h2>
-      <p>Nosso serviço de tosa oferece cuidados completos para animais de pequeno e grande porte, garantindo uma experiência confortável e segura. Nossos profissionais são altamente capacitados e utilizam produtos de alta qualidade, proporcionando um cuidado especial para a pele e pelagem do seu pet.</p>
-  </div>
+	<div class="mt-4">
+			<h2>Descrição</h2>
+			<p>Nosso serviço de tosa oferece cuidados completos para animais de pequeno e grande porte, garantindo uma experiência confortável e segura. Nossos profissionais são altamente capacitados e utilizam produtos de alta qualidade, proporcionando um cuidado especial para a pele e pelagem do seu pet.</p>
+	</div>
 
-  <div class="mt-4">
-      <h2>Serviços Incluídos</h2>
-      <ul>
-          <li>Tosa higiênica e estilizada conforme a preferência do dono</li>
-          <li>Limpeza de ouvidos e corte de unhas</li>
-          <li>Hidratação e escovação da pelagem</li>
-      </ul>
-  </div>
+	<div class="mt-4">
+			<h2>Serviços Incluídos</h2>
+			<ul>
+					<li>Tosa higiênica e estilizada conforme a preferência do dono</li>
+					<li>Limpeza de ouvidos e corte de unhas</li>
+					<li>Hidratação e escovação da pelagem</li>
+			</ul>
+	</div>
 <div class="schedule-container">
-  <h2 class="mt-4">Agendar Serviço</h2>
-  <div class="form-group">
-      <label for="date">Selecione a Data:</label>
-      <input type="date" id="date" class="form-control datepicker" placeholder="Selecione a Data">
+	<h2 class="mt-4">Agendar Serviço</h2>
+	<div class="form-group">
+			<label for="date">Selecione a Data:</label>
+			<input type="date" id="date" class="form-control datepicker" placeholder="Selecione a Data">
 </div>
 <div class="schedule-container">
-  <h2 class="mt-4">Agendar Serviço</h2>
-  <div class="form-group">
-      <label for="date">Selecione a Data:</label>
-      <input type="date" id="date" class="form-control datepicker" placeholder="Selecione a Data">
-  </div>
-  <div class="form-group">
-      <label class="mt-4" for="time">Marque o horário:</label>
-      <div>
-          <button class="btn time-slot-btn">08:00</button>
-          <button class="btn time-slot-btn">09:00</button>
-          <button class="btn time-slot-btn">10:00</button>
-          <button class="btn time-slot-btn">11:00</button>
-          <button class="btn time-slot-btn">14:00</button>
-          <button class="btn time-slot-btn">15:00</button>
-      </div>
-  </div>
-  <label class="mt-4"><h2>Selecione a Opção de Entrega:</h2></label>
-  <div class="delivery-option d-block">
-      <input type="radio" id="pickup" name="delivery" value="pickup">
-      <label for="pickup">Retirar no Local</label>
-      <br>
-      <input type="radio" id="delivery" name="delivery" value="delivery">
-      <label for="delivery">Envio para Casa</label>
-  </div>
-  <button class="btn schedule-btn mt-4">Agendar</button>
+	<h2 class="mt-4">Agendar Serviço</h2>
+	<div class="form-group">
+			<label for="date">Selecione a Data:</label>
+			<input type="date" id="date" class="form-control datepicker" placeholder="Selecione a Data">
+	</div>
+	<div class="schedule-container">
+		<h2 class="mt-4">Agendar Serviço</h2>
+		<div class="form-group">
+				<label for="date">Selecione a Data:</label>
+				<input type="date" id="date" class="form-control datepicker" placeholder="Selecione a Data">
+		</div>
+		<div class="form-group">
+				<label class="mt-4" for="time">Marque o horário:</label>
+				<div class="d-flex flex-column justify-content-start">
+						<label for="08" class="align-items-center d-flex gap-1 btn time-slot-btn">
+								<input type="radio" name="time" value="08" id="08">
+								08:00
+						</label>
+
+						<label for="09" class="align-items-center d-flex gap-1 btn time-slot-btn">
+								<input type="radio" name="time" value="09" id="09">
+								09:00
+						</label>
+						
+						<label for="10" class="align-items-center d-flex gap-1 gap-1 btn time-slot-btn">
+								<input type="radio" name="time" value="10" id="10">
+								10:00
+						</label>
+						
+						<label for="11" class="align-items-center d-flex gap-1 gap-1 btn time-slot-btn">
+								<input type="radio" name="time" value="11" id="11">
+								11:00
+						</label>
+						
+						<label for="14" class="align-items-center d-flex gap-1 gap-1 btn time-slot-btn">
+								<input type="radio" name="time" value="14" id="14">
+								14:00
+						</label>
+
+						<label for="15" class="align-items-center d-flex gap-1 btn time-slot-btn">
+								<input type="radio" name="time" value="15" id="15">
+								15:00
+						</label>
+				</div>
+</div>
+	<label class="mt-4"><h2>Selecione a Opção de Entrega:</h2></label>
+	<div class="delivery-option d-block">
+			<input type="radio" id="pickup" name="delivery" value="pickup">
+			<label for="pickup">Retirar no Local</label>
+			<br>
+			<input type="radio" id="delivery" name="delivery" value="delivery">
+			<label for="delivery">Envio para Casa</label>
+	</div>
+	<button class="btn schedule-btn mt-4">Agendar</button>
 </div>
