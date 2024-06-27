@@ -18,19 +18,15 @@
   border: none;
 }
 .time-slot-btn {
-  background-color: #28a745;
-  color: white;
   border: none;
-  margin: 5px;
+  padding: 0.45rem;
 }
 
-.time-slot-btn:focus {
-  background-color: #218838;
+.time-slot-btn:has(:checked) {
+  color: white;
+  background-color: var(--color-primary);
 }
 
-.time-slot-btn:hover {
-  background-color: #218838;
-}
 .delivery-option {
   display: flex;
   justify-content: space-around;
